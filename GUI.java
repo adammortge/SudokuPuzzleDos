@@ -1,6 +1,16 @@
-import java.awt.event.*;
+
+ 
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.table.AbstractTableModel;
+import java.awt.Dimension;
+import java.awt.GridLayout;
+import javax.swing.JApplet;
+import java.util.*;
 import java.awt.*;
-import javax.swing.*;
+
 
 public class GUI extends JApplet
 {
@@ -16,7 +26,7 @@ public class GUI extends JApplet
         JRootPane rootPane = this.getRootPane();    
         rootPane.putClientProperty("defeatSystemEventQueueCheck", Boolean.TRUE);
         
-        addKeyListener(new MyListener());
+       
 
         // provide any initialisation necessary for your JApplet
     }
@@ -99,7 +109,9 @@ public class GUI extends JApplet
             }
         }
    
-
+    public void add(JPanel p){
+    
+    }
     public void destroy()
     {
         // provide code to be run when JApplet is about to be destroyed.

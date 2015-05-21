@@ -1,4 +1,12 @@
 
+ 
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.table.AbstractTableModel;
+import java.awt.Dimension;
+import java.awt.GridLayout;
 /**
  * Write a description of class Panel here.
  * 
@@ -29,5 +37,9 @@ public class Panel extends GUI
     {
         // put your code here
         return x + y;
+    }
+    
+    public void addTable(JTable t){
+        
     }
 }
