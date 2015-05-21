@@ -24,44 +24,57 @@ public class SudokuPuzzle implements Puzzle
         puzzleSize = input.length;
         if (!solved)
         {
-            solve(0,0); 
+            try 
+            {
+                solve(0,0); 
+            }
+            catch (Exception e)
+            {
+            }
         }
     }
 
-    private void solve(int row, int col)
+    private void solve (int row, int col) throws Exception
     {
-        if (row == puzzleSize)
+        if (row >= puzzleSize)
         {
-            return;
+            throw new Exception("Solution Found");
         }
+
+        if (solvedPuzzle[row][col] != 0)
+        {
+            next(row,col);
+        }
+
         else
         {
-            if (solvedPuzzle[row][col] != 0)
+            for (int num = 1; num <= puzzleSize; num++)
             {
-                next(row,col);
-            }
-
-            else
-            {
-                for (int x  = 0; x < puzzleSize + 1; x++)
+                if (isValid (row,col,num))
                 {
-                    if (checkRow(row, x) && checkCol(col,x) && checkBox(row,col,x))
-                    {
-                        solvedPuzzle[row][col] = x;
-                        next(row,col);
-                    }
+                    solvedPuzzle[row][col] = num;
+                    next(row,col);
                 }
-                solvedPuzzle[row][col] = 0;
             }
+            solvedPuzzle[row][col] = 0;
         }
     }
 
-    private void next(int row, int col)
+    private void next(int row, int col) throws Exception
     {
         if (col < puzzleSize - 1)
+        {
             solve(row,col + 1);
+        }
         else
+        {
             solve(row + 1, 0);
+        }
+    }
+    
+    private boolean isValid (int row, int col, int num)
+    {
+        return checkRow(row, num) && checkCol(col,num) && checkBox(row,col,num);
     }
 
     private boolean checkRow(int row, int num)
