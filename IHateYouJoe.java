@@ -13,15 +13,7 @@ import java.applet.Applet;
  * @author amortge7
  */
 public class IHateYouJoe extends Applet {
+// but i love me and thats whats importantslakdfu hwleifhqewkfiubESLFHJbvckuac gliasn
 
-    /**
-     * Initialization method that will be called after the applet is loaded into
-     * the browser.
-     */
-    @Override
-    public void init() {
-        // TODO start asynchronous download of heavy resources
-    }
-
-    // TODO overwrite start(), stop() and destroy() methods
+<3<3<3<3<3,3,3<3<3,3<3<3<3<3<3<3<3<3<#<3<3<3,3<3<3<3<3<3
 }
