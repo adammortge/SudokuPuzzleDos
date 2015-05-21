@@ -35,7 +35,7 @@ public class Tables extends Panel
      */
     public void JTable()
     {
-       super.addTable(puzzle);
+       addTable(puzzle);
     }
     
 }

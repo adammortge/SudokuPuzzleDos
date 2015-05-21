@@ -10,13 +10,15 @@ import java.awt.GridLayout;
 import javax.swing.JApplet;
 import java.util.*;
 import java.awt.*;
+import java.awt.event.MouseListener;
+import javax.swing.JApplet;
 
 
 public class GUI extends JApplet
 {
     private int cellX=50;
     private int cellY=50;
-
+    private JPanel grid;
     public void init()
     {
         // this is a workaround for a security conflict with some browsers
@@ -25,9 +27,9 @@ public class GUI extends JApplet
         // on startup to check access. May not be necessary with your browser. 
         JRootPane rootPane = this.getRootPane();    
         rootPane.putClientProperty("defeatSystemEventQueueCheck", Boolean.TRUE);
-        
+        grid = Puzzles();   
        
-
+        grid.addMouseListener(this);   
         // provide any initialisation necessary for your JApplet
     }
 
@@ -88,7 +90,7 @@ public class GUI extends JApplet
     public class MyListener implements MouseListener 
 
         {
-            public void keyPressed(KeyEvent e)
+            public void mousePressed(MouseEvent e)
             {
                 int keyCode = e.getKeyCode();
                 if(keyCode == KeyEvent.VK_RIGHT)
@@ -98,14 +100,24 @@ public class GUI extends JApplet
                 repaint();
             }
 
-            public void keyReleased(KeyEvent e)
+            public void mouseReleased(MouseEvent e)
             {
 
             }
 
-            public void keyTyped(KeyEvent e)
+            public void mouseEntered(KeyEvent e)
             {
 
+            }
+            
+            public void mouseClicked(MouseEvent e)
+            {    
+                
+            }
+            
+            public void mouseExited(MouseEvent e)
+            {
+     
             }
         }
    

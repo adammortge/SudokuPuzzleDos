@@ -17,14 +17,16 @@ public class Panel extends GUI
 {
     // instance variables - replace the example below with your own
     private int x;
-
+    private JScrollPane sPuzzle;
+    private JPanel window = new JPanel() ;
+    private JTable t;
     /**
      * Constructor for objects of class Panel
      */
     public Panel()
     {
-        // initialise instance variables
-        x = 0;
+       t = Tables();
+       this.addTable(t);
     }
 
     /**
@@ -39,7 +41,9 @@ public class Panel extends GUI
         return x + y;
     }
     
-    public void addTable(JTable t){
-        
+    public JPanel addTable(JTable t){
+        sPuzzle = new JScrollPane(t);
+        window.add(sPuzzle);
+        return window;
     }
 }
