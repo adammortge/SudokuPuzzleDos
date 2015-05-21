@@ -9,7 +9,7 @@
  * @author akumar5
  */
 
-public class SudokuPuzzle 
+public class SudokuPuzzle implements Puzzle
 {
     private int [][] solvedPuzzle;
     private int [][] origPuzzle;
@@ -113,5 +113,30 @@ public class SudokuPuzzle
     public int [][] getSolved ()
     {
         return solvedPuzzle;
+    }
+
+    public int getPuzzleSize ()
+    {
+        return puzzleSize;
+    }
+
+    public boolean [][] checkGuess (int [][] guesses)
+    {
+        boolean [][] results = new boolean [puzzleSize][puzzleSize];
+        for (int x = 0; x < solvedPuzzle.length; x++)
+        {
+            for (int y = 0; y < solvedPuzzle[0].length; y++)
+            {
+                try
+                {
+                    results[x][y] = (guesses[x][y] == solvedPuzzle[x][y]);
+                }
+                catch (ArrayIndexOutOfBoundsException e)
+                {
+                    results[x][y] = false;
+                }
+            }
+        }
+        return results;
     }
 }
