@@ -1,9 +1,11 @@
-
+import java.awt.event.*;
 import java.awt.*;
 import javax.swing.*;
 
 public class GUI extends JApplet
 {
+    private int cellX=50;
+    private int cellY=50;
 
     public void init()
     {
@@ -13,6 +15,8 @@ public class GUI extends JApplet
         // on startup to check access. May not be necessary with your browser. 
         JRootPane rootPane = this.getRootPane();    
         rootPane.putClientProperty("defeatSystemEventQueueCheck", Boolean.TRUE);
+        
+        addKeyListener(new MyListener());
 
         // provide any initialisation necessary for your JApplet
     }
@@ -31,15 +35,12 @@ public class GUI extends JApplet
 
     public void paint(Graphics g)
     {
-        int cellX=50;
-        int cellY=50;
-        
-        int[][] array = new int[9][9];
-        
+
+        String[][] array = new String[9][9];
         //selected cell
         g.setColor(Color.magenta);
         g.fillRect(cellX,cellY,60,60);
-        
+
         // simple text displayed on applet
         g.setColor(Color.black);
         g.fillRect(0,0,50,590);
@@ -58,15 +59,9 @@ public class GUI extends JApplet
         g.fillRect(407,0,6,590);
         g.fillRect(0,227,590,6);
         g.fillRect(0,407,590,6);
+
         
-        
-        
-        
-        
-        
-        
-        
-        
+
         
         
         
@@ -76,21 +71,44 @@ public class GUI extends JApplet
         //         g.drawString("Sample Applet", 20, 20);
         //         g.setColor(Color.blue);
         //         g.drawString("created by BlueJ", 20, 40);
+        repaint();
     }
+
+    public class MyListener implements KeyListener 
+        {
+            public void keyPressed(KeyEvent e)
+            {
+                int keyCode = e.getKeyCode();
+                if(keyCode == KeyEvent.VK_RIGHT)
+                {
+                    cellX+=50;
+                }
+                repaint();
+            }
+
+            public void keyReleased(KeyEvent e)
+            {
+
+            }
+
+            public void keyTyped(KeyEvent e)
+            {
+
+            }
+        }
+   
 
     public void destroy()
     {
         // provide code to be run when JApplet is about to be destroyed.
     }
 
-    
     public String getAppletInfo()
     {
         // provide information about the applet
         return "Title:   \nAuthor:   \nA simple applet example description. ";
     }
 
-    
     public String[][] getParameterInfo()
     {
         // provide parameter information about the applet
