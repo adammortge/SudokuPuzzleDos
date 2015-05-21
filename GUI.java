@@ -74,7 +74,7 @@ public class GUI extends JApplet
         repaint();
     }
 
-    public class MyListener implements KeyListener 
+    public class MyListener implements MouseListener 
         {
             public void keyPressed(KeyEvent e)
             {
