@@ -2,6 +2,7 @@
 objectbench.height=76
 objectbench.width=666
 package.editor.height=400
+<<<<<<< HEAD
 package.editor.width=564
 package.editor.x=1113
 package.editor.y=38
@@ -32,10 +33,43 @@ target2.height=50
 target2.name=GUI
 target2.naviview.expanded=true
 target2.numberAppletParameters=0
+=======
+package.editor.width=560
+package.editor.x=30
+package.editor.y=30
+package.numDependencies=0
+package.numTargets=6
+package.showExtends=true
+package.showUses=true
+project.charset=UTF-8
+target1.appletHeight=500
+target1.appletWidth=500
+target1.editor.height=700
+target1.editor.width=900
+target1.editor.x=661
+target1.editor.y=248
+target1.height=50
+target1.name=GUI
+target1.naviview.expanded=true
+target1.numberAppletParameters=0
+target1.showInterface=false
+target1.type=AppletTarget
+target1.typeParameters=
+target1.width=80
+target1.x=190
+target1.y=70
+target2.editor.height=700
+target2.editor.width=900
+target2.editor.x=70
+target2.editor.y=50
+target2.height=50
+target2.name=Panel
+>>>>>>> 1e961695cbc076af9527b9b93ef2dd6ff1bf8ab8
 target2.showInterface=false
 target2.type=AppletTarget
 target2.typeParameters=
 target2.width=80
+<<<<<<< HEAD
 target2.x=180
 target2.y=70
 target3.editor.height=700
@@ -44,10 +78,22 @@ target3.editor.x=0
 target3.editor.y=1
 target3.height=50
 target3.name=Panel
+=======
+target2.x=190
+target2.y=180
+target3.editor.height=700
+target3.editor.width=900
+target3.editor.x=923
+target3.editor.y=92
+target3.height=50
+target3.name=GUI2
+target3.naviview.expanded=true
+>>>>>>> 1e961695cbc076af9527b9b93ef2dd6ff1bf8ab8
 target3.showInterface=false
 target3.type=ClassTarget
 target3.typeParameters=
 target3.width=80
+<<<<<<< HEAD
 target3.x=90
 target3.y=10
 target4.editor.height=700
@@ -56,23 +102,40 @@ target4.editor.x=1094
 target4.editor.y=54
 target4.height=50
 target4.name=GUI2
+=======
+target3.x=70
+target3.y=10
+target4.editor.height=700
+target4.editor.width=900
+target4.editor.x=70
+target4.editor.y=51
+target4.height=50
+target4.name=SudokuPuzzle
+>>>>>>> 1e961695cbc076af9527b9b93ef2dd6ff1bf8ab8
 target4.naviview.expanded=true
 target4.showInterface=false
 target4.type=ClassTarget
 target4.typeParameters=
+<<<<<<< HEAD
 target4.width=80
 target4.x=70
 target4.y=70
+=======
+target4.width=110
+target4.x=240
+target4.y=10
+>>>>>>> 1e961695cbc076af9527b9b93ef2dd6ff1bf8ab8
 target5.editor.height=700
 target5.editor.width=900
-target5.editor.x=473
-target5.editor.y=212
+target5.editor.x=70
+target5.editor.y=50
 target5.height=50
-target5.name=SudokuPuzzle
+target5.name=Tables
 target5.naviview.expanded=true
 target5.showInterface=false
 target5.type=ClassTarget
 target5.typeParameters=
+<<<<<<< HEAD
 target5.width=100
 target5.x=10
 target5.y=130
@@ -96,3 +159,21 @@ target7.typeParameters=
 target7.width=80
 target7.x=190
 target7.y=10
+=======
+target5.width=80
+target5.x=280
+target5.y=260
+target6.editor.height=700
+target6.editor.width=900
+target6.editor.x=70
+target6.editor.y=50
+target6.height=50
+target6.name=Puzzle
+target6.naviview.expanded=true
+target6.showInterface=false
+target6.type=InterfaceTarget
+target6.typeParameters=
+target6.width=80
+target6.x=370
+target6.y=90
+>>>>>>> 1e961695cbc076af9527b9b93ef2dd6ff1bf8ab8

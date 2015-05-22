@@ -9,7 +9,7 @@
  * @author akumar5
  */
 
-public class SudokuPuzzle implements Puzzle
+public class SudokuPuzzle 
 {
     private int [][] solvedPuzzle;
     private int [][] origPuzzle;
