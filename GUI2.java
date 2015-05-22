@@ -1,12 +1,15 @@
-import java.awt.event.*;
-import java.awt.*;
-import javax.swing.*;
 
-public class GUI extends JApplet
-{
-    private int cellX=50;
+/**
+ * Write a description of class GUI2 here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
+public class GUI2 extends JFrame
+{    private int cellX=50;
     private int cellY=50;
-
+    private static final int IFW = JComponent.WHEN_IN_FOCUSED_WINDOW;
+    
     public void init()
     {
         // this is a workaround for a security conflict with some browsers
@@ -16,7 +19,7 @@ public class GUI extends JApplet
         JRootPane rootPane = this.getRootPane();    
         rootPane.putClientProperty("defeatSystemEventQueueCheck", Boolean.TRUE);
         
-        addKeyListener(new MyListener());
+        
 
         // provide any initialisation necessary for your JApplet
     }
@@ -74,9 +77,7 @@ public class GUI extends JApplet
         repaint();
     }
 
-
-    public class MyListener implements MouseListener 
-
+    public class MyListener implements KeyListener 
         {
             public void keyPressed(KeyEvent e)
             {
