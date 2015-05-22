@@ -12,13 +12,15 @@ import java.util.*;
 import java.awt.*;
 import java.awt.event.MouseListener;
 import javax.swing.JApplet;
+import javax.swing.JRootPane;
+
 
 
 public class GUI extends JApplet
 {
     private int cellX=50;
     private int cellY=50;
-    private JPanel grid;
+    
     public void init()
     {
         // this is a workaround for a security conflict with some browsers
@@ -27,9 +29,11 @@ public class GUI extends JApplet
         // on startup to check access. May not be necessary with your browser. 
         JRootPane rootPane = this.getRootPane();    
         rootPane.putClientProperty("defeatSystemEventQueueCheck", Boolean.TRUE);
-        grid = Puzzles();   
-       
-        grid.addMouseListener(this);   
+        JFrame grid = new JFrame("SudokuPuzzle");
+        grid.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        grid.setPreferredSize(new Dimension(900,900));
+        grid.getContentPane().add(new Panel());
+        this.paint(g);
         // provide any initialisation necessary for your JApplet
     }
 
@@ -85,45 +89,8 @@ public class GUI extends JApplet
         //         g.drawString("created by BlueJ", 20, 40);
         repaint();
     }
-
-
-    public class MyListener implements MouseListener 
-
-        {
-            public void mousePressed(MouseEvent e)
-            {
-                int keyCode = e.getKeyCode();
-                if(keyCode == KeyEvent.VK_RIGHT)
-                {
-                    cellX+=50;
-                }
-                repaint();
-            }
-
-            public void mouseReleased(MouseEvent e)
-            {
-
-            }
-
-            public void mouseEntered(KeyEvent e)
-            {
-
-            }
-            
-            public void mouseClicked(MouseEvent e)
-            {    
-                
-            }
-            
-            public void mouseExited(MouseEvent e)
-            {
-     
-            }
-        }
    
-    public void add(JPanel p){
-    
-    }
+
     public void destroy()
     {
         // provide code to be run when JApplet is about to be destroyed.

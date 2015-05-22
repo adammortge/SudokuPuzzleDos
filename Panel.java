@@ -13,20 +13,20 @@ import java.awt.GridLayout;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Panel extends GUI
+public class Panel extends JPanel
 {
     // instance variables - replace the example below with your own
     private int x;
     private JScrollPane sPuzzle;
     private JPanel window = new JPanel() ;
-    private JTable t;
+    private JTable puzzle = new JTable(9,9);
     /**
      * Constructor for objects of class Panel
      */
     public Panel()
     {
-       t = Tables();
-       this.addTable(t);
+      this.addTable(puzzle); 
+      
     }
 
     /**

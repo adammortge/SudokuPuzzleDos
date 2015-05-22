@@ -1,15 +1,24 @@
 #BlueJ package file
 objectbench.height=76
+<<<<<<< HEAD
 objectbench.width=676
 package.editor.height=427
 package.editor.width=578
 package.editor.x=-3
 package.editor.y=2
+=======
+objectbench.width=662
+package.editor.height=400
+package.editor.width=560
+package.editor.x=30
+package.editor.y=30
+>>>>>>> 1e961695cbc076af9527b9b93ef2dd6ff1bf8ab8
 package.numDependencies=0
 package.numTargets=6
 package.showExtends=true
 package.showUses=true
 project.charset=UTF-8
+<<<<<<< HEAD
 target1.editor.height=700
 target1.editor.width=900
 target1.editor.x=0
@@ -29,16 +38,49 @@ target2.editor.y=0
 target2.height=50
 target2.name=Puzzle
 target2.naviview.expanded=true
+=======
+target1.appletHeight=500
+target1.appletWidth=500
+target1.editor.height=700
+target1.editor.width=900
+target1.editor.x=661
+target1.editor.y=248
+target1.height=50
+target1.name=GUI
+target1.naviview.expanded=true
+target1.numberAppletParameters=0
+target1.showInterface=false
+target1.type=AppletTarget
+target1.typeParameters=
+target1.width=80
+target1.x=190
+target1.y=70
+target2.editor.height=700
+target2.editor.width=900
+target2.editor.x=70
+target2.editor.y=50
+target2.height=50
+target2.name=Panel
+>>>>>>> 1e961695cbc076af9527b9b93ef2dd6ff1bf8ab8
 target2.showInterface=false
 target2.type=InterfaceTarget
 target2.typeParameters=
 target2.width=80
+<<<<<<< HEAD
 target2.x=220
 target2.y=20
 target3.editor.height=700
 target3.editor.width=900
 target3.editor.x=51
 target3.editor.y=30
+=======
+target2.x=190
+target2.y=180
+target3.editor.height=700
+target3.editor.width=900
+target3.editor.x=923
+target3.editor.y=92
+>>>>>>> 1e961695cbc076af9527b9b93ef2dd6ff1bf8ab8
 target3.height=50
 target3.name=GUI2
 target3.naviview.expanded=true
@@ -46,6 +88,7 @@ target3.showInterface=false
 target3.type=ClassTarget
 target3.typeParameters=
 target3.width=80
+<<<<<<< HEAD
 target3.x=120
 target3.y=140
 target4.height=50
@@ -64,12 +107,36 @@ target5.editor.x=29
 target5.editor.y=0
 target5.height=50
 target5.name=GUI
+=======
+target3.x=70
+target3.y=10
+target4.editor.height=700
+target4.editor.width=900
+target4.editor.x=70
+target4.editor.y=51
+target4.height=50
+target4.name=SudokuPuzzle
+target4.naviview.expanded=true
+target4.showInterface=false
+target4.type=ClassTarget
+target4.typeParameters=
+target4.width=110
+target4.x=240
+target4.y=10
+target5.editor.height=700
+target5.editor.width=900
+target5.editor.x=70
+target5.editor.y=50
+target5.height=50
+target5.name=Tables
+>>>>>>> 1e961695cbc076af9527b9b93ef2dd6ff1bf8ab8
 target5.naviview.expanded=true
 target5.numberAppletParameters=0
 target5.showInterface=false
 target5.type=AppletTarget
 target5.typeParameters=
 target5.width=80
+<<<<<<< HEAD
 target5.x=220
 target5.y=90
 target6.editor.height=700
@@ -85,3 +152,20 @@ target6.typeParameters=
 target6.width=100
 target6.x=80
 target6.y=20
+=======
+target5.x=280
+target5.y=260
+target6.editor.height=700
+target6.editor.width=900
+target6.editor.x=70
+target6.editor.y=50
+target6.height=50
+target6.name=Puzzle
+target6.naviview.expanded=true
+target6.showInterface=false
+target6.type=InterfaceTarget
+target6.typeParameters=
+target6.width=80
+target6.x=370
+target6.y=90
+>>>>>>> 1e961695cbc076af9527b9b93ef2dd6ff1bf8ab8
