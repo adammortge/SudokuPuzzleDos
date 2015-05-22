@@ -1,12 +1,26 @@
-import java.awt.event.*;
+
+ 
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.table.AbstractTableModel;
+import java.awt.Dimension;
+import java.awt.GridLayout;
+import javax.swing.JApplet;
+import java.util.*;
 import java.awt.*;
-import javax.swing.*;
+import java.awt.event.MouseListener;
+import javax.swing.JApplet;
+import javax.swing.JRootPane;
+
+
 
 public class GUI extends JApplet
 {
     private int cellX=50;
     private int cellY=50;
-
+    
     public void init()
     {
         // this is a workaround for a security conflict with some browsers
@@ -15,9 +29,11 @@ public class GUI extends JApplet
         // on startup to check access. May not be necessary with your browser. 
         JRootPane rootPane = this.getRootPane();    
         rootPane.putClientProperty("defeatSystemEventQueueCheck", Boolean.TRUE);
-        
-        addKeyListener(new MyListener());
-
+        JFrame grid = new JFrame("SudokuPuzzle");
+        grid.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        grid.setPreferredSize(new Dimension(900,900));
+        grid.getContentPane().add(new Panel());
+        this.paint(g);
         // provide any initialisation necessary for your JApplet
     }
 
@@ -73,31 +89,6 @@ public class GUI extends JApplet
         //         g.drawString("created by BlueJ", 20, 40);
         repaint();
     }
-
-
-    public class MyListener implements MouseListener 
-
-        {
-            public void keyPressed(KeyEvent e)
-            {
-                int keyCode = e.getKeyCode();
-                if(keyCode == KeyEvent.VK_RIGHT)
-                {
-                    cellX+=50;
-                }
-                repaint();
-            }
-
-            public void keyReleased(KeyEvent e)
-            {
-
-            }
-
-            public void keyTyped(KeyEvent e)
-            {
-
-            }
-        }
    
 
     public void destroy()
