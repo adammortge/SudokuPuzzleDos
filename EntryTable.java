@@ -27,21 +27,6 @@ public class EntryTable extends JPanel
         entered.setFillsViewportHeight(true);
         JScrollPane scrollPane = new JScrollPane(entered);
         this.add(scrollPane);
-
-        JButton finished = new JButton("Click When Finished Entering. Leave Unknowns as 0.");
-        this.add(finished);
-    }
-
-    private class ButtonListener implements ActionListener
-    {
-        public ButtonListener ()
-        {
-        }
-
-        public void actionPerformed (ActionEvent e)
-        {
-            throw new Exception("Return vals");
-        }
     }
 
     public int [][] getVals ()
@@ -56,5 +41,5 @@ public class EntryTable extends JPanel
             }
         }
         return values;
-    }
+   }
 }
