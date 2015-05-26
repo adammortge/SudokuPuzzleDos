@@ -11,17 +11,24 @@ public class Runner
     
     public static void main(String args[])
     {
-        JFrame frame = new JFrame("Sudoku");
-        
-        
-        
-        puz gui = new puz();
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setPreferredSize(new Dimension(600,600));
-        
-        frame.getContentPane().add(new puz());
-        
-        frame.setVisible(true);
-        frame.setTitle("SudokuPuzzle");
+//         JFrame frame = new JFrame("Sudoku");
+//         
+//         
+//         
+//         //puz gui = new puz();
+//         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//         frame.setPreferredSize(new Dimension(600,600));
+//         
+//         frame.getContentPane().add(new puz());
+//         
+//         frame.setVisible(true);
+//         frame.setTitle("SudokuPuzzle");
+
+           JFrame initframe = new JFrame("Enter Knowns");
+           initframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+           initframe.getContentPane().add(new EntryTable(), BorderLayout.CENTER);
+           initframe.pack();
+           initframe.setVisible(true);
+           
     }
 }
