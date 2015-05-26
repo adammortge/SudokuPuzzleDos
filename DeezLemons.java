@@ -8,11 +8,11 @@ import java.awt.event.*;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class TheShitThatHoldsEverythingTogether 
+public class DeezLemons 
 {
     int [][] values;
     EntryTable table;
-    public TheShitThatHoldsEverythingTogether()
+    public DeezLemons()
     {
         //         JFrame frame = new JFrame("Sudoku");
         //         
