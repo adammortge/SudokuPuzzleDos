@@ -19,8 +19,8 @@ public class SudokuPuzzle
 
     public SudokuPuzzle (int [][] input, boolean solved)
     { 
-        solvedPuzzle = input;
-        origPuzzle = input;
+        origPuzzle = input.clone();
+        solvedPuzzle = input.clone();
         puzzleSize = input.length;
         if (!solved)
         {
