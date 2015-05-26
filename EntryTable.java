@@ -1,8 +1,6 @@
 import java.awt.*;
 import javax.swing.*;
-import java.awt.event.*;
 import javax.swing.table.*;
-import javax.swing.table.AbstractTableModel;
 
 public class EntryTable extends JPanel
 {
