@@ -24,18 +24,33 @@ public class Runner
         //         
         //         frame.setVisible(true);
         //         frame.setTitle("SudokuPuzzle");
-
+        int [][] values;
+        
         JFrame initframe = new JFrame("Enter Knowns");
+        EntryTable table = new EntryTable();
         initframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        initframe.getContentPane().add(new EntryTable(), BorderLayout.CENTER);
-        
-        
+        initframe.getContentPane().add(table, BorderLayout.CENTER);
+
         JPanel panel2 = new JPanel ();
+        
         JButton finished = new JButton("Click When Finished Entering. Leave Unknowns as 0.");
+        NumListener b = new NumListener();
+        finished.add(b);
+        
         panel2.add(finished);
         initframe.getContentPane().add(panel2, BorderLayout.SOUTH);
-        
+
         initframe.pack();
         initframe.setVisible(true);
+    }
+    private class NumListener implements ActionListener
+    {
+        public NumListener ()
+        {
+        }
+        public void actionPerformed(ActionEvent e)
+        {
+           values = table.getVals();
+        }
     }
 }
