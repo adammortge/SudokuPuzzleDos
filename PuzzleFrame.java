@@ -2,12 +2,12 @@
 import java.awt.*;
 import javax.swing.*;
 
-public class puz extends JPanel 
+public class PuzzleFrame extends JPanel 
 {
     JTable puzzle2;
     SudokuPuzzle p;
 
-    public puz(int[][] source, boolean solved)
+    public PuzzleFrame(int[][] source, boolean solved)
     {
         p = new SudokuPuzzle(source,solved);
         setLayout(new FlowLayout());
