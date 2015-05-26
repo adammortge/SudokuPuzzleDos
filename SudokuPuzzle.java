@@ -38,7 +38,7 @@ public class SudokuPuzzle
     {
         if (row >= puzzleSize)
         {
-            throw new Exception("Solution Found");
+            throw new Exception("Puzzle Solved");
         }
 
         if (solvedPuzzle[row][col] != 0)
