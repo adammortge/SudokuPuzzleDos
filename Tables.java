@@ -23,7 +23,7 @@ public class Tables extends Panel
      */
     public Tables()
     {
-        this.JTable();
+        this.createTable();
         
     }
 
@@ -33,9 +33,9 @@ public class Tables extends Panel
      * @param  y   a sample parameter for a method
      * @return     the sum of x and y 
      */
-    public void JTable()
+    public JTable createTable()
     {
-       addTable(puzzle);
+       return puzzle;
     }
     
 }
