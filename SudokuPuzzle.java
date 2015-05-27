@@ -19,8 +19,17 @@ public class SudokuPuzzle
 
     public SudokuPuzzle (int [][] input, boolean solved)
     { 
-        origPuzzle = input.clone();
-        solvedPuzzle = input.clone();
+        solvedPuzzle = new int[9][9];
+        origPuzzle = new int[9][9];
+        for (int x = 0; x < 9; x++)
+        {
+            for (int y = 0; y < 9; y++)
+            {
+                origPuzzle[x][y] = input[x][y];
+                solvedPuzzle[x][y] = input[x][y];
+            }
+        }
+
         puzzleSize = input.length;
         if (!solved)
         {
@@ -71,7 +80,7 @@ public class SudokuPuzzle
             solve(row + 1, 0);
         }
     }
-    
+
     private boolean isValid (int row, int col, int num)
     {
         return checkRow(row, num) && checkCol(col,num) && checkBox(row,col,num);
