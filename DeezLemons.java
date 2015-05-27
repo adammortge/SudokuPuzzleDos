@@ -62,7 +62,6 @@ public class DeezLemons
         secondframe.pack();
         secondframe.setVisible(true);
 
-        
     }
     private class NumListener implements ActionListener
     {
@@ -81,6 +80,7 @@ public class DeezLemons
         public ClearListener()
         {
         }
+
         public void actionPerformed(ActionEvent e)
         {
             values = puzzle.getPuzzle().getOriginal();
@@ -93,6 +93,7 @@ public class DeezLemons
         public CheckListener()
         {
         }
+
         public void actionPerformed(ActionEvent e)
         {
             puzzle.checkGuesses();
@@ -103,11 +104,17 @@ public class DeezLemons
         public ShowSolutionListener()
         {
         }
+
         public void actionPerformed(ActionEvent e)
         {
-            values = puzzle.getPuzzle().getSolved();
-            secondframe.dispatchEvent(new WindowEvent(initframe, WindowEvent.WINDOW_CLOSING));
-            funWithJavaPart2();
+            int [][] vals = puzzle.getPuzzle().getSolved();
+            //secondframe.dispatchEvent(new WindowEvent(initframe, WindowEvent.WINDOW_CLOSING));
+            JFrame thirdframe = new JFrame("Enter Guesses");
+            thirdframe.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+            PuzzleFrame puzzle2 = new PuzzleFrame(vals, true);
+            thirdframe.getContentPane().add(puzzle2, BorderLayout.CENTER);
+            thirdframe.pack();
+            thirdframe.setVisible(true);
         }
     }
 }
