@@ -12,6 +12,9 @@ public class DeezLemons
 {
     int [][] values;
     EntryTable table;
+    JFrame initframe;
+    JFrame secondframe;
+    PuzzleFrame puzzle;
     public DeezLemons()
     {
         //         JFrame frame = new JFrame("Sudoku");
@@ -28,7 +31,7 @@ public class DeezLemons
         //         frame.setTitle("SudokuPuzzle");
         
         
-        JFrame initframe = new JFrame("Enter Knowns");
+        initframe = new JFrame("Enter Knowns");
         table = new EntryTable();
         initframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         initframe.getContentPane().add(table, BorderLayout.CENTER);
@@ -44,6 +47,16 @@ public class DeezLemons
         initframe.pack();
         initframe.setVisible(true);
     }
+    private void funWithJavaPart2()
+    {
+        initframe.dispatchEvent(new WindowEvent(initframe, WindowEvent.WINDOW_CLOSING));
+        secondframe = new JFrame("Enter Guesses");
+        secondframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        puzzle = new PuzzleFrame(values, false);
+        secondframe.getContentPane().add(puzzle, BorderLayout.CENTER);
+        secondframe.pack();
+        secondframe.setVisible(true);
+    }
     private class NumListener implements ActionListener
     {
         public NumListener ()
@@ -52,6 +65,7 @@ public class DeezLemons
         public void actionPerformed(ActionEvent e)
         {
            values = table.getVals();
+           funWithJavaPart2();
         }
     }
 }
