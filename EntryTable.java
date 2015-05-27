@@ -1,6 +1,7 @@
 import java.awt.*;
 import javax.swing.*;
 import javax.swing.table.*;
+import java.lang.Integer;
 
 public class EntryTable extends JPanel
 {
@@ -35,7 +36,7 @@ public class EntryTable extends JPanel
         {
             for (int y = 0; y < 9; y++)
             {
-                values[x][y] = new Integer(model.getValueAt(x,y));
+                values[x][y] = Integer.parseInt(model.getValueAt(x,y).toString());
             }
         }
         return values;
