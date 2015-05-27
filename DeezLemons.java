@@ -11,25 +11,13 @@ import java.awt.event.*;
 public class DeezLemons 
 {
     int [][] values;
+    boolean[][] guesses;
     EntryTable table;
     JFrame initframe;
     JFrame secondframe;
     PuzzleFrame puzzle;
     public DeezLemons()
     {
-        //         JFrame frame = new JFrame("Sudoku");
-        //         
-        //         
-        //         
-        //         //puz gui = new puz();
-        //         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        //         frame.setPreferredSize(new Dimension(600,600));
-        //         
-        //         frame.getContentPane().add(new puz());
-        //         
-        //         frame.setVisible(true);
-        //         frame.setTitle("SudokuPuzzle");
-
         initframe = new JFrame("Enter Knowns");
         table = new EntryTable();
         initframe.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -54,29 +42,27 @@ public class DeezLemons
         secondframe.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         puzzle = new PuzzleFrame(values, false);
         secondframe.getContentPane().add(puzzle, BorderLayout.CENTER);
-        
+
         JPanel panel = new JPanel();
 
         JButton clearButton = new JButton("Clear");
         JButton checkButton = new JButton("Check");
         JButton showSolutionButton = new JButton("Show Solution");
-        
+
         clearButton.addActionListener(new ClearListener());
         checkButton.addActionListener(new CheckListener());
         showSolutionButton.addActionListener(new ShowSolutionListener());
-        
+
         panel.add(clearButton);
         panel.add(checkButton);
         panel.add(showSolutionButton);
-        
+
         secondframe.getContentPane().add(panel, BorderLayout.SOUTH);
-        
+
         secondframe.pack();
         secondframe.setVisible(true);
 
         
-        
-
     }
     private class NumListener implements ActionListener
     {
@@ -109,7 +95,7 @@ public class DeezLemons
         }
         public void actionPerformed(ActionEvent e)
         {
-            puzzle.getPuzzle().checkGuess(ValueGetter.getVals(table.getTableModel()));
+            puzzle.checkGuesses();
         }
     }
     private class ShowSolutionListener implements ActionListener

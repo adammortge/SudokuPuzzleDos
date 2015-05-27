@@ -6,12 +6,12 @@ public class PuzzleFrame extends JPanel
 {
     JTable puzzle2;
     SudokuPuzzle p;
+    boolean [][] guesses;
 
     public PuzzleFrame(int[][] source, boolean solved)
     {
         p = new SudokuPuzzle(source,solved);
         setLayout(new FlowLayout());
-        //puzzle.setTableHeader(null);
         String[][] nums = new String[9][9];
         for (int x = 0; x < source.length; x++)
         {
@@ -39,20 +39,13 @@ public class PuzzleFrame extends JPanel
     {
         return p;
     }
-
-    //     private boolean isCellEditable(int row,int col)
-    //     {
-    //         TableModel table = puzzle2.getModel();
-    //         for (int i = 0; i < table.getRowCount(); i++) 
-    //         {
-    //             for (int j = 0; j < table.getColumnCount(); j++) 
-    //             {
-    //                 if(table.getValueAt!=0)
-    //                 {
-    //                     return false;
-    //                 }
-    //                 return true;
-    //             }
-    //         }
-    //     }
+    
+    public void checkGuesses ()
+    {
+        guesses = p.checkGuess(ValueGetter.getVals(this.getTableModel()));
+    }
+    
+    public void repaint ()
+    {
+    }
 }
