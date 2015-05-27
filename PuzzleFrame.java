@@ -30,6 +30,11 @@ public class PuzzleFrame extends JPanel
         add(scrollPane);
 
     }
+    
+    public SudokuPuzzle getPuzzle()
+    {
+        return p;
+    }
 
     //     private boolean isCellEditable(int row,int col)
     //     {
