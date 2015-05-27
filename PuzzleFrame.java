@@ -1,4 +1,4 @@
-
+import javax.swing.table.*;
 import java.awt.*;
 import javax.swing.*;
 
@@ -29,6 +29,10 @@ public class PuzzleFrame extends JPanel
         JScrollPane scrollPane = new JScrollPane(puzzle2);
         add(scrollPane);
 
+    }
+    public TableModel getTableModel()
+    {
+        return puzzle2.getModel();
     }
     
     public SudokuPuzzle getPuzzle()

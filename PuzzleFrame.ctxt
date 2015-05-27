@@ -1,4 +1,8 @@
 #BlueJ class context
 comment0.params=source\ solved
 comment0.target=PuzzleFrame(int[][],\ boolean)
-numComments=1
+comment1.params=
+comment1.target=javax.swing.table.TableModel\ getTableModel()
+comment2.params=
+comment2.target=SudokuPuzzle\ getPuzzle()
+numComments=3
