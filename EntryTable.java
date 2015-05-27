@@ -5,8 +5,8 @@ import java.lang.Integer;
 
 public class EntryTable extends JPanel
 {
-    JTable entered;
-    JButton finished;
+    private JTable entered;
+    private JButton finished;
 
     public EntryTable()
     {

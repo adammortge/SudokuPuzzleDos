@@ -13,7 +13,7 @@ public class SudokuPuzzle
 {
     private int [][] solvedPuzzle;
     private int [][] origPuzzle;
-    int puzzleSize;
+    private int puzzleSize;
 
     /* Precondition: input contains only ints from 0 to 9 inclusive. 0 means an empty cell.*/
 

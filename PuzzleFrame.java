@@ -4,9 +4,9 @@ import javax.swing.*;
 
 public class PuzzleFrame extends JPanel 
 {
-    JTable puzzle2;
-    SudokuPuzzle p;
-    boolean [][] guesses;
+    private JTable puzzle2;
+    private SudokuPuzzle p;
+    private boolean [][] guesses;
 
     public PuzzleFrame(int[][] source, boolean solved)
     {
@@ -43,6 +43,12 @@ public class PuzzleFrame extends JPanel
     public void checkGuesses ()
     {
         guesses = p.checkGuess(ValueGetter.getVals(this.getTableModel()));
+    }
+    
+    public boolean [][] getEvaluation ()
+    {
+        this.checkGuesses();
+        return guesses;
     }
     
     public void repaint ()

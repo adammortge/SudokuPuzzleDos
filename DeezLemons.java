@@ -10,12 +10,12 @@ import java.awt.event.*;
  */
 public class DeezLemons 
 {
-    int [][] values;
-    boolean[][] guesses;
-    EntryTable table;
-    JFrame initframe;
-    JFrame secondframe;
-    PuzzleFrame puzzle;
+    private int [][] values;
+    private boolean[][] guesses;
+    private EntryTable table;
+    private JFrame initframe;
+    private JFrame secondframe;
+    private PuzzleFrame puzzle;
     public DeezLemons()
     {
         initframe = new JFrame("Enter Knowns");
@@ -35,7 +35,7 @@ public class DeezLemons
         initframe.setVisible(true);
     }
 
-    private void funWithJavaPart2()
+    private void secondWindow()
     {
         initframe.dispatchEvent(new WindowEvent(initframe, WindowEvent.WINDOW_CLOSING));
         secondframe = new JFrame("Enter Guesses");
@@ -72,7 +72,7 @@ public class DeezLemons
         public void actionPerformed(ActionEvent e)
         {
             values = ValueGetter.getVals(table.getTableModel());
-            funWithJavaPart2();
+            secondWindow();
         }
     }
     private class ClearListener implements ActionListener
@@ -85,7 +85,7 @@ public class DeezLemons
         {
             values = puzzle.getPuzzle().getOriginal();
             secondframe.dispatchEvent(new WindowEvent(initframe, WindowEvent.WINDOW_CLOSING));
-            funWithJavaPart2();
+            secondWindow();
         }
     }
     private class CheckListener implements ActionListener
@@ -96,7 +96,18 @@ public class DeezLemons
 
         public void actionPerformed(ActionEvent e)
         {
-            puzzle.checkGuesses();
+            boolean[][] checker = puzzle.getEvaluation();
+            for(int r=0; r<checker.length;r++)
+            {
+                for(int c=0; c<checker[0].length;c++)
+                {
+                    if(checker[r][c]==false)
+                    {
+                        System.out.println("Row " + (r+1) + " and Column " + (c+1) + " is incorrect.");
+                        System.out.println();
+                    }
+                }
+            }
         }
     }
     private class ShowSolutionListener implements ActionListener
@@ -108,8 +119,7 @@ public class DeezLemons
         public void actionPerformed(ActionEvent e)
         {
             int [][] vals = puzzle.getPuzzle().getSolved();
-            //secondframe.dispatchEvent(new WindowEvent(initframe, WindowEvent.WINDOW_CLOSING));
-            JFrame thirdframe = new JFrame("Enter Guesses");
+            JFrame thirdframe = new JFrame("Solution");
             thirdframe.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
             PuzzleFrame puzzle2 = new PuzzleFrame(vals, true);
             thirdframe.getContentPane().add(puzzle2, BorderLayout.CENTER);
