@@ -49,7 +49,7 @@ public class DeezLemons
 
     private void funWithJavaPart2()
     {
-        //initframe.dispatchEvent(new WindowEvent(initframe, WindowEvent.WINDOW_CLOSING));
+        initframe.dispatchEvent(new WindowEvent(initframe, WindowEvent.WINDOW_CLOSING));
         secondframe = new JFrame("Enter Guesses");
         secondframe.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         puzzle = new PuzzleFrame(values, false);
@@ -119,7 +119,9 @@ public class DeezLemons
         }
         public void actionPerformed(ActionEvent e)
         {
-            
+            values = puzzle.getPuzzle().getSolved();
+            secondframe.dispatchEvent(new WindowEvent(initframe, WindowEvent.WINDOW_CLOSING));
+            funWithJavaPart2();
         }
     }
 }
