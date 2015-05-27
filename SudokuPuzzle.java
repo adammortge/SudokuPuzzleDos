@@ -9,7 +9,7 @@
  * @author akumar5
  */
 
-public class SudokuPuzzle implements Puzzle
+public class SudokuPuzzle 
 {
     private int [][] solvedPuzzle;
     private int [][] origPuzzle;
@@ -19,8 +19,8 @@ public class SudokuPuzzle implements Puzzle
 
     public SudokuPuzzle (int [][] input, boolean solved)
     { 
-        solvedPuzzle = input;
-        origPuzzle = input;
+        origPuzzle = input.clone();
+        solvedPuzzle = input.clone();
         puzzleSize = input.length;
         if (!solved)
         {
@@ -38,7 +38,7 @@ public class SudokuPuzzle implements Puzzle
     {
         if (row >= puzzleSize)
         {
-            throw new Exception("Solution Found");
+            throw new Exception("Puzzle Solved");
         }
 
         if (solvedPuzzle[row][col] != 0)

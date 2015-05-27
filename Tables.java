@@ -13,7 +13,7 @@ import java.awt.GridLayout;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Tables extends Panel
+public class Tables extends JPanel
 {
     // instance variables - replace the example below with your own
     private int x;
