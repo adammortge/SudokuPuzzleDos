@@ -1,0 +1,25 @@
+#BlueJ class context
+comment0.params=input\ solved
+comment0.target=SudokuPuzzle(int[][],\ boolean)
+comment0.text=Precondition\:\ input\ contains\ only\ ints\ from\ 0\ to\ 9\ inclusive.\ 0\ means\ an\ empty\ cell.
+comment1.params=row\ col
+comment1.target=void\ solve(int,\ int)
+comment10.params=guesses
+comment10.target=boolean[][]\ checkGuess(int[][])
+comment2.params=row\ col
+comment2.target=void\ next(int,\ int)
+comment3.params=row\ col\ num
+comment3.target=boolean\ isValid(int,\ int,\ int)
+comment4.params=row\ num
+comment4.target=boolean\ checkRow(int,\ int)
+comment5.params=col\ num
+comment5.target=boolean\ checkCol(int,\ int)
+comment6.params=row\ col\ num
+comment6.target=boolean\ checkBox(int,\ int,\ int)
+comment7.params=
+comment7.target=int[][]\ getOriginal()
+comment8.params=
+comment8.target=int[][]\ getSolved()
+comment9.params=
+comment9.target=int\ getPuzzleSize()
+numComments=11
