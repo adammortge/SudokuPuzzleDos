@@ -97,7 +97,9 @@ public class DeezLemons
         }
         public void actionPerformed(ActionEvent e)
         {
-            puzzle.getPuzzle().getOriginal();
+            values = puzzle.getPuzzle().getOriginal();
+            secondframe.dispatchEvent(new WindowEvent(initframe, WindowEvent.WINDOW_CLOSING));
+            funWithJavaPart2();
         }
     }
     private class CheckListener implements ActionListener
