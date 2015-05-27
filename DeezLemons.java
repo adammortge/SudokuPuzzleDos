@@ -64,7 +64,7 @@ public class DeezLemons
         }
         public void actionPerformed(ActionEvent e)
         {
-           values = table.getVals();
+           values = ValueGetter.getVals(table.getTableModel());
            funWithJavaPart2();
         }
     }
