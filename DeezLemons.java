@@ -32,7 +32,7 @@ public class DeezLemons
 
         initframe = new JFrame("Enter Knowns");
         table = new EntryTable();
-        initframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        initframe.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         initframe.getContentPane().add(table, BorderLayout.CENTER);
 
         JPanel panel2 = new JPanel ();
@@ -51,7 +51,7 @@ public class DeezLemons
     {
         //initframe.dispatchEvent(new WindowEvent(initframe, WindowEvent.WINDOW_CLOSING));
         secondframe = new JFrame("Enter Guesses");
-        secondframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        secondframe.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         puzzle = new PuzzleFrame(values, false);
         secondframe.getContentPane().add(puzzle, BorderLayout.CENTER);
         
