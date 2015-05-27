@@ -12,20 +12,15 @@ public class PuzzleFrame extends JPanel
         p = new SudokuPuzzle(source,solved);
         setLayout(new FlowLayout());
         //puzzle.setTableHeader(null);
-        Integer[][] nums = new Integer[9][9];
+        String[][] nums = new String[9][9];
         for (int x = 0; x < source.length; x++)
         {
             for (int y = 0; y < source[0].length; y++)
             {
-                nums[x][y] = new Integer(source[x][y]);
+                nums[x][y] = new String("" + source[x][y]);
             }
         }
         String[] columnNames = {"","","","","","","","",""};
-
-        String[][] data = {
-                {"1","2","3"},
-                {"4","5","6"},
-                {"7","8","9"}};
 
         puzzle2 = new JTable(nums, columnNames);
         puzzle2.setPreferredScrollableViewportSize(new Dimension(500,500));
