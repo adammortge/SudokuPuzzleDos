@@ -27,18 +27,9 @@ public class EntryTable extends JPanel
         JScrollPane scrollPane = new JScrollPane(entered);
         this.add(scrollPane);
     }
-
-    public int [][] getVals ()
+    
+    public TableModel getTableModel()
     {
-        int [][] values = new int[9][9];
-        TableModel model = entered.getModel();
-        for (int x = 0; x < 9; x++)
-        {
-            for (int y = 0; y < 9; y++)
-            {
-                values[x][y] = Integer.parseInt(model.getValueAt(x,y).toString());
-            }
-        }
-        return values;
-   }
+        return entered.getModel();
+    }
 }
