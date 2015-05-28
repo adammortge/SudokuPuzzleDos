@@ -113,7 +113,7 @@ public class DeezLemons
             {
                 for(int c=0; c<checker[0].length;c++)
                 {
-                    if(checker[r][c]==false)
+                    if(!checker[r][c])
                     {
                         System.out.println("The guess at row " + (r+1) + ", column " + (c+1) + " is incorrect.");
                         System.out.println();
