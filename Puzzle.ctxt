@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=source
+comment0.target=Puzzle(int[][])
+comment0.text=\r\n\ creates\ a\ new\ frame,\ source\ is\ the\ original\ entries,\ it\ stores\ this\ so\ if\ cleared\ this\ will\ \r\n\ show\ up.\ Shows\ a\ new\ panel\ that\ can\ be\ edited.\r\n
+comment1.params=
+comment1.target=javax.swing.table.TableModel\ getTableModel()
+comment1.text=\r\n\ Allows\ the\ values\ from\ the\ table\ to\ be\ passed\ out\ of\ the\ puzzle\ window\r\n
+comment2.params=
+comment2.target=SudokuPuzzle\ getPuzzle()
+comment2.text=\r\n\ Allows\ for\ the\ puzzle\ object\ to\ be\ passed\ out\ of\ the\ puzzle\ window\r\n
+comment3.params=
+comment3.target=boolean[][]\ getEvaluation()
+comment3.text=\r\n\ Allows\ for\ each\ of\ the\ user's\ guesses\ to\ be\ evaluated\ against\ the\ solution\r\n
+numComments=4

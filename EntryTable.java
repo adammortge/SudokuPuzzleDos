@@ -3,8 +3,7 @@ import javax.swing.*;
 import javax.swing.table.*;
 import java.lang.Integer;
 /**
- * Creates original table that is displayed first.
- * User will then input numbers into this array
+ * Creates the original window where the user enters in the known numbers of the puzzle
  */
 public class EntryTable extends JPanel
 {
@@ -30,6 +29,9 @@ public class EntryTable extends JPanel
         JScrollPane scrollPane = new JScrollPane(entered);
         this.add(scrollPane);
     }
+    /**
+     * Allows for the values that the user enters to be passed out of this window
+     */
     
     public TableModel getTableModel()
     {

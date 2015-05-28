@@ -1,6 +1,8 @@
 #BlueJ class context
 comment0.params=
 comment0.target=DeezLemons()
+comment0.text=\r\n\ Has\ user\ enter\ the\ known\ numbers\ in\ a\ puzzle\r\n
 comment1.params=
 comment1.target=void\ secondWindow()
+comment1.text=\r\n\ Pulls\ up\ the\ second\ window\ which\ has\ the\ 3\ buttons\ and\ allows\ you\ to\ input\ guesses.\r\n
 numComments=2

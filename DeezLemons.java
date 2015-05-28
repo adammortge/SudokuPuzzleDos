@@ -3,10 +3,7 @@ import javax.swing.*;
 import java.awt.event.*;
 
 /**
- * Where the panels are displayed from and where the buttons have their calls
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * This executes each window, first allowing the user to enter in knowns, then allowing them to guess and check
  */
 public class DeezLemons 
 {
@@ -15,7 +12,7 @@ public class DeezLemons
     private EntryTable table;
     private JFrame initframe;
     private JFrame secondframe;
-    private PuzzleFrame puzzle;
+    private Puzzle puzzle;
     /**
      * Has user enter the known numbers in a puzzle
      */
@@ -46,7 +43,7 @@ public class DeezLemons
         initframe.dispatchEvent(new WindowEvent(initframe, WindowEvent.WINDOW_CLOSING));
         secondframe = new JFrame("Enter Guesses");
         secondframe.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        puzzle = new PuzzleFrame(values, false);
+        puzzle = new Puzzle(values);
         secondframe.getContentPane().add(puzzle, BorderLayout.CENTER);
 
         JPanel panel = new JPanel();
@@ -70,7 +67,7 @@ public class DeezLemons
 
     }
     /** 
-     * So the User can input numbers 
+     * This ends the ability for the user to enter knowns and allows them to guess and check against the solution
      */
     private class NumListener implements ActionListener
     {
@@ -101,8 +98,7 @@ public class DeezLemons
         }
     }
     /** 
-     * Sends a call to the check method to see if the solution is correct to the one that the created based on 
-     * numbers inputed
+     * Allows the user to see which guesses are correct and which are incorrect
      */
     private class CheckListener implements ActionListener
     {
@@ -119,11 +115,12 @@ public class DeezLemons
                 {
                     if(checker[r][c]==false)
                     {
-                        System.out.println("Row " + (r+1) + " and Column " + (c+1) + " is incorrect.");
+                        System.out.println("The guess at row " + (r+1) + ", column " + (c+1) + " is incorrect.");
                         System.out.println();
                     }
                 }
             }
+            System.out.println("\n\n");
         }
     }
     /**
@@ -140,7 +137,7 @@ public class DeezLemons
             int [][] vals = puzzle.getPuzzle().getSolved();
             JFrame thirdframe = new JFrame("Solution");
             thirdframe.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-            PuzzleFrame puzzle2 = new PuzzleFrame(vals, true);
+            Puzzle puzzle2 = new Puzzle(vals);
             thirdframe.getContentPane().add(puzzle2, BorderLayout.CENTER);
             thirdframe.pack();
             thirdframe.setVisible(true);

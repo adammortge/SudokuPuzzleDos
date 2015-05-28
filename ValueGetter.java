@@ -1,6 +1,7 @@
 import javax.swing.table.*;
 /** 
- * returns array of ints that is filled at random
+ * Allows values passed out of a table to be converted into an array of integers which can be
+ * passed in elsewhere
  */
 public class ValueGetter
 {

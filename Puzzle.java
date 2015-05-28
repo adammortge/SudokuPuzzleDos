@@ -2,9 +2,9 @@ import javax.swing.table.*;
 import java.awt.*;
 import javax.swing.*;
 /**
- * Creates the frame and sends out call to check the puzzle.
+ * Creates the frame that allows the user to enter guesses, also creates a puzzle with a solution
  */
-public class PuzzleFrame extends JPanel 
+public class Puzzle extends JPanel 
 {
     private JTable puzzle2;
     private SudokuPuzzle p;
@@ -14,9 +14,9 @@ public class PuzzleFrame extends JPanel
      * creates a new frame, source is the original entries, it stores this so if cleared this will 
      * show up. Shows a new panel that can be edited.
      */
-    public PuzzleFrame(int[][] source, boolean solved)
+    public Puzzle(int[][] source)
     {
-        p = new SudokuPuzzle(source,solved);
+        p = new SudokuPuzzle(source);
         setLayout(new FlowLayout());
         String[][] nums = new String[9][9];
         for (int x = 0; x < source.length; x++)
@@ -36,28 +36,27 @@ public class PuzzleFrame extends JPanel
         add(scrollPane);
 
     }
+    /**
+     * Allows the values from the table to be passed out of the puzzle window
+    */
     public TableModel getTableModel()
     {
         return puzzle2.getModel();
     }
-    
+    /**
+     * Allows for the puzzle object to be passed out of the puzzle window
+     */
     public SudokuPuzzle getPuzzle()
     {
         return p;
     }
-    
-    public void checkGuesses ()
-    {
-        guesses = p.checkGuess(ValueGetter.getVals(this.getTableModel()));
-    }
-    
+    /**
+     * Allows for each of the user's guesses to be evaluated against the solution
+     */
+
     public boolean [][] getEvaluation ()
     {
-        this.checkGuesses();
-        return guesses;
+        return p.checkGuess(ValueGetter.getVals(this.getTableModel()));
     }
     
-    public void repaint ()
-    {
-    }
 }

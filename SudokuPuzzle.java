@@ -5,22 +5,20 @@
  */
 
 /**
- *
- * @author akumar5
+ * A representation of a sudoku puzzle, along with its solution and the original knowns
  */
 
 public class SudokuPuzzle 
 {
     private int [][] solvedPuzzle;
     private int [][] origPuzzle;
-    private int puzzleSize;
+    private final int puzzleSize = 9;
 
     /* Precondition: input contains only ints from 0 to 9 inclusive. 0 means an empty cell.*/
-     /** 
-      * places original inputs into their own array, and places them into a new array that is the one to be 
-      * edited.
-      */
-    public SudokuPuzzle (int [][] input, boolean solved)
+    /** 
+     * Stores the knowns in origPuzzle and starts to find the solution, writing the solution to solvedPuzzle
+     */
+    public SudokuPuzzle (int [][] input)
     { 
         solvedPuzzle = new int[9][9];
         origPuzzle = new int[9][9];
@@ -32,22 +30,17 @@ public class SudokuPuzzle
                 solvedPuzzle[x][y] = input[x][y];
             }
         }
-
-        puzzleSize = input.length;
-        if (!solved)
+        try 
         {
-            try 
-            {
-                solve(0,0); 
-            }
-            catch (Exception e)
-            {
-            }
+            solve(0,0); 
+        }
+        catch (Exception e)
+        {
         }
     }
 
     /**
-     * solves the puzzle so you can check. If solved will say you solved it.
+     * Solves the puzzle and stores the solution locally in solvedPuzzle
      */
     private void solve (int row, int col) throws Exception
     {
@@ -74,7 +67,7 @@ public class SudokuPuzzle
             solvedPuzzle[row][col] = 0;
         }
     }
-    
+
     /** 
      * Used to traverse the array
      */
@@ -114,7 +107,7 @@ public class SudokuPuzzle
     }
 
     /**
-     * Checks if entry is valid in the col
+     * Checks if entry is valid in the column
      */
     private boolean checkCol(int col, int num)
     {
@@ -127,8 +120,9 @@ public class SudokuPuzzle
         }
         return true;
     }
+
     /**
-     * Checks if entry is valid in the box
+     * Checks if entry is valid in the 3x3 box
      */
     private boolean checkBox(int row, int col, int num)
     {
@@ -146,6 +140,7 @@ public class SudokuPuzzle
         }
         return true;
     }
+
     /** 
      * Returns original entries
      */
@@ -162,15 +157,9 @@ public class SudokuPuzzle
         return solvedPuzzle;
     }
 
-    public int getPuzzleSize ()
-    {
-        return puzzleSize;
-    }
-
     /** 
-     * Checks if solution entered by user matches the computers solution, if not it will say where the 
-     * error is. If solved it will say you solved it. It will traverse the solved array by the computer
-     * and the array solved by the user and compare the user entries with computer solution
+     * Checks if solution entered by user matches the computer's solution. Returns true at the given cell
+     * if the guess is correct and false if incorrect.
      */
     public boolean [][] checkGuess (int [][] guesses)
     {
