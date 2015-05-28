@@ -1,31 +1,32 @@
-
+import javax.swing.table.*;
 import java.awt.*;
 import javax.swing.*;
-
+/**
+ * Creates the frame and sends out call to check the puzzle.
+ */
 public class PuzzleFrame extends JPanel 
 {
-    JTable puzzle2;
-    SudokuPuzzle p;
-
+    private JTable puzzle2;
+    private SudokuPuzzle p;
+    private boolean [][] guesses;
+    
+    /**
+     * creates a new frame, source is the original entries, it stores this so if cleared this will 
+     * show up. Shows a new panel that can be edited.
+     */
     public PuzzleFrame(int[][] source, boolean solved)
     {
         p = new SudokuPuzzle(source,solved);
         setLayout(new FlowLayout());
-        //puzzle.setTableHeader(null);
-        Integer[][] nums = new Integer[9][9];
+        String[][] nums = new String[9][9];
         for (int x = 0; x < source.length; x++)
         {
             for (int y = 0; y < source[0].length; y++)
             {
-                nums[x][y] = new Integer(source[x][y]);
+                nums[x][y] = new String("" + source[x][y]);
             }
         }
         String[] columnNames = {"","","","","","","","",""};
-
-        String[][] data = {
-                {"1","2","3"},
-                {"4","5","6"},
-                {"7","8","9"}};
 
         puzzle2 = new JTable(nums, columnNames);
         puzzle2.setPreferredScrollableViewportSize(new Dimension(500,500));
@@ -35,20 +36,28 @@ public class PuzzleFrame extends JPanel
         add(scrollPane);
 
     }
-
-    //     private boolean isCellEditable(int row,int col)
-    //     {
-    //         TableModel table = puzzle2.getModel();
-    //         for (int i = 0; i < table.getRowCount(); i++) 
-    //         {
-    //             for (int j = 0; j < table.getColumnCount(); j++) 
-    //             {
-    //                 if(table.getValueAt!=0)
-    //                 {
-    //                     return false;
-    //                 }
-    //                 return true;
-    //             }
-    //         }
-    //     }
+    public TableModel getTableModel()
+    {
+        return puzzle2.getModel();
+    }
+    
+    public SudokuPuzzle getPuzzle()
+    {
+        return p;
+    }
+    
+    public void checkGuesses ()
+    {
+        guesses = p.checkGuess(ValueGetter.getVals(this.getTableModel()));
+    }
+    
+    public boolean [][] getEvaluation ()
+    {
+        this.checkGuesses();
+        return guesses;
+    }
+    
+    public void repaint ()
+    {
+    }
 }

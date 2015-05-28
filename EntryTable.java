@@ -1,13 +1,15 @@
 import java.awt.*;
 import javax.swing.*;
-import java.awt.event.*;
 import javax.swing.table.*;
-import javax.swing.table.AbstractTableModel;
-
+import java.lang.Integer;
+/**
+ * Creates original table that is displayed first.
+ * User will then input numbers into this array
+ */
 public class EntryTable extends JPanel
 {
-    JTable entered;
-    JButton finished;
+    private JTable entered;
+    private JButton finished;
 
     public EntryTable()
     {
@@ -27,34 +29,10 @@ public class EntryTable extends JPanel
         entered.setFillsViewportHeight(true);
         JScrollPane scrollPane = new JScrollPane(entered);
         this.add(scrollPane);
-
-        JButton finished = new JButton("Click When Finished Entering. Leave Unknowns as 0.");
-        this.add(finished);
     }
-
-    private class ButtonListener implements ActionListener
+    
+    public TableModel getTableModel()
     {
-        public ButtonListener ()
-        {
-        }
-
-        public void actionPerformed (ActionEvent e)
-        {
-            throw new Exception("Return vals");
-        }
-    }
-
-    public int [][] getVals ()
-    {
-        int [][] values = new int[9][9];
-        TableModel model = entered.getModel();
-        for (int x = 0; x < 9; x++)
-        {
-            for (int y = 0; y < 9; y++)
-            {
-                values[x][y] = new Integer(model.getValueAt(x,y));
-            }
-        }
-        return values;
+        return entered.getModel();
     }
 }
